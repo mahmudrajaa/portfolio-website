@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://rajamohammed.vercel.app/sitemap.xml
+Sitemap: https://mahmudrajaa.github.io/portfolio-website/sitemap.xml
