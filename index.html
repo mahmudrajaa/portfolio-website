@@ -136,17 +136,15 @@ header.nav.scrolled{background:color-mix(in srgb,var(--bg) 78%,transparent);back
 .hero-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;font-size:.82rem;color:var(--muted-2);font-family:var(--mono)}
 .hero-meta span{display:flex;align-items:center;gap:7px}
 
-/* portrait card */
-.portrait{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line-2);background:linear-gradient(160deg,var(--panel),var(--bg-2));box-shadow:var(--shadow);aspect-ratio:4/4.6}
-.portrait .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px}
-.portrait .ring{width:150px;height:150px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:var(--display);font-size:3rem;font-weight:700;color:#04101f;box-shadow:0 0 50px -6px var(--accent)}
-.portrait .cap{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(4,10,25,.85));font-family:var(--mono);font-size:.72rem;color:var(--muted)}
-.portrait .hint{margin-top:16px;font-family:var(--mono);font-size:.68rem;color:var(--muted-2);max-width:200px}
-.float-badge{position:absolute;background:color-mix(in srgb,var(--panel) 90%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line-2);border-radius:12px;padding:10px 13px;font-family:var(--mono);font-size:.72rem;box-shadow:var(--shadow)}
-.float-badge b{color:var(--emerald)}
-.fb1{top:16px;left:-18px}
-.fb2{bottom:70px;right:-18px}
-@media(max-width:940px){.fb1,.fb2{display:none}}
+/* circular avatar */
+.hero-photo{display:flex;flex-direction:column;align-items:center;gap:22px}
+.avatar{width:300px;max-width:80%;aspect-ratio:1;border-radius:50%;padding:5px;background:var(--grad);box-shadow:0 0 70px -14px var(--accent);position:relative}
+.avatar::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px solid var(--line-2);opacity:.5}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 20%;border-radius:50%;display:block;border:4px solid var(--bg)}
+.avatar-stats{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.avatar-stats .pill{font-family:var(--mono);font-size:.72rem;color:var(--muted);background:var(--card);border:1px solid var(--line-2);border-radius:40px;padding:8px 14px}
+.avatar-stats .pill b{color:var(--emerald)}
+@media(max-width:940px){.avatar{width:230px}}
 
 /* ============ MARQUEE / TRUST ============ */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;background:var(--bg-2)}
@@ -410,17 +408,11 @@ footer.ft{border-top:1px solid var(--line);padding:40px 0;background:var(--bg)}
           <span>☁ Azure + AWS</span>
         </div>
       </div>
-      <div style="position:relative">
-        <div class="float-badge fb1">AI triage · <b>−60–70%</b> handling time</div>
-        <div class="float-badge fb2">Inference cost · <b>−30–40%</b></div>
-        <div class="portrait">
-          <div class="ph">
-            <div>
-              <div class="ring">RM</div>
-              <div class="hint">Replace with your professional photo → save as <b>portrait.jpg</b> in this folder and swap the placeholder.</div>
-            </div>
-          </div>
-          <div class="cap">Raja Mohammed — Senior Cloud &amp; AI Automation Architect</div>
+      <div class="hero-photo">
+        <div class="avatar"><img src="portrait.jpg" alt="Raja Mohammed — Senior Cloud &amp; AI Automation Architect"></div>
+        <div class="avatar-stats">
+          <span class="pill">AI triage <b>−60–70%</b></span>
+          <span class="pill">Inference cost <b>−30–40%</b></span>
         </div>
       </div>
     </div>
